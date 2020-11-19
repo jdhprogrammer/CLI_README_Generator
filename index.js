@@ -48,7 +48,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'moreLinks',
-            message: 'Enter the additional project link(s) using the entire link, including the http(s):. (Use * comma "," to separate each link)',
+            message: 'Enter the additional project link(s) using the entire link, including the http(s):. (* Use commas "," to separate each link)',
             when: function(answers) {
                 return answers.askMoreLinks;
             },
@@ -66,46 +66,47 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'screenshot',
-            message: 'Enter the image paths or urls of screenshots or demo. (Use * comma "," to separate each path or url)',
+            message: 'Enter the image paths or urls of screenshots or demo. * (Use commas "," to separate each path or url)',
             when: function(answers) {
                 return answers.askImgs;
             },
         },
         {
             type: 'input',
-            name: 'objective',
-            message: 'Give a brief Description of your Project.',
+            name: 'description',
+            message: 'Give a brief Description of your Project:',
         },
-        // {
-        //     type: 'input',
-        //     name: 'linkedin',
-        //     message: 'Enter your LinkedIn URL.',
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'linkedin',
-        //     message: 'Enter your LinkedIn URL.',
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'linkedin',
-        //     message: 'Enter your LinkedIn URL.',
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'linkedin',
-        //     message: 'Enter your LinkedIn URL.',
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'linkedin',
-        //     message: 'Enter your LinkedIn URL.',
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'linkedin',
-        //     message: 'Enter your LinkedIn URL.',
-        // },
+        {
+            type: 'input',
+            name: 'userStory',
+            message: 'Write out the User Story of you Project:',
+        },
+        {
+            type: 'input',
+            name: 'tools',
+            message: 'List the technologies used for the Projec. (* Use commas "," to separate each technology)',
+        },
+        {
+            type: 'input',
+            name: 'install',
+            message: 'What are the steps required to Install your Project/Application?',
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Provide instructions on how you use your Project/Application:',
+        },
+        {
+            type: 'input',
+            name: 'credit',
+            message: 'Enter the People and/or Sites you want to reference/give credit to:',
+        },
+        {
+            type: 'list',
+            name: 'size',
+            message: 'Please select a license for your Project:',
+            choices: ['APACHE 2.0', 'Mozilla Public 2.0', 'GNU GPLv3', 'GNU AGPLv3', 'MIT', 'Boost Software 1.0', 'The Unlicense'],
+        },
         // {
         //     type: 'input',
         //     name: 'linkedin',
@@ -128,13 +129,16 @@ const generateMarkdown = (read) =>
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+  * [Description](#description)
+  * [User Story](#user-story)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
+  * [Usage](#usage)
+<-- * [Roadmap](#roadmap) -->
 * [Contributing](#contributing)
+    * [Credits & References](#credits-&-references)
 * [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
@@ -147,11 +151,16 @@ const generateMarkdown = (read) =>
 
 ${read.description}
 
+#### User Story
+
+${read.userStory}
+
+
 ### Built With
 
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [${read.tool0}](https://${read.tool0}.com)
+* [${read.tool1}](https://${read.tool1}.com)
+* [${read.tool3}](https://${read.tool3}.com)
 
 
 ## Getting Started
@@ -174,13 +183,10 @@ Install Node.js on your Computer
     - node index.js
 4. And the Prompt questions in the Command Line and You'll have a Good README.
 
-<!-- USAGE EXAMPLES 
+ 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_ -->
-
+${read.usage}
 
 <!-- ROADMAP 
 ## Roadmap
@@ -198,6 +204,10 @@ Any contributions you make are **greatly appreciated**.
 3. Commit your Changes ('git commit -m "Add some AmazingFeature"')
 4. Push to the Branch ('git push origin feature/AmazingFeature")
 5. Open a Pull Request
+
+### Credits & References
+
+${read.credit}
 
 <!-- LICENSE -->
 ## License
