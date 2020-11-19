@@ -1,7 +1,6 @@
 // const generateMarkdown = require('./utils/generateMarkdown')
 // // array of questions for user
-const questions = [
-];
+const questions = [];
 // // function to write README file
 // function writeToFile(readme, data) {}
 // // function to initialize program
@@ -49,26 +48,34 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'moreLinks',
-            message: 'Enter the additional project link(s) using the entire link, including the http(s):. (Use comma "," to separate each link)',
+            message: 'Enter the additional project link(s) using the entire link, including the http(s):. (Use * comma "," to separate each link)',
             when: function(answers) {
                 return answers.askMoreLinks;
             },
         },
-        // {
-        //     type: 'input',
-        //     name: 'linkedin',
-        //     message: 'Enter your LinkedIn URL.',
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'linkedin',
-        //     message: 'Enter your LinkedIn URL.',
-        // },
-        // {
-        //     type: 'input',
-        //     name: 'linkedin',
-        //     message: 'Enter your LinkedIn URL.',
-        // },
+        {
+            type: 'input',
+            name: 'title',
+            message: 'Enter your project title',
+        },
+        {
+            type: 'confirm',
+            name: 'askImgs',
+            message: 'Would you like to add screenshots or demo to README?',
+        },
+        {
+            type: 'input',
+            name: 'screenshot',
+            message: 'Enter the image paths or urls of screenshots or demo. (Use * comma "," to separate each path or url)',
+            when: function(answers) {
+                return answers.askImgs;
+            },
+        },
+        {
+            type: 'input',
+            name: 'objective',
+            message: 'Give a brief Description of your Project.',
+        },
         // {
         //     type: 'input',
         //     name: 'linkedin',
@@ -109,10 +116,14 @@ const promptUser = () => {
 
 const generateMarkdown = (read) =>
     `# ${read.title}
-    #### Developer: ${read.name} 
-    email: ${read.email} - https://github.com/${read.userName}
-    
-    Project Repository: [https://github.com/${read.userName}/${read.repoName}](https://github.com/${read.userName}/${read.repoName})
+    #### Developer: ${read.name}
+
+    Email: ${read.email}
+    GitHub: https://github.com/${read.github}
+    LinkedIn: ${read.linkedin}
+
+    Project Repository: [https://github.com/${read.github}/${read.repo}](https://github.com/${read.github}/${read.repo})
+    Video Walk-thru: [${read.askMoreLinks}](${read.askMoreLinks})
     
 ## Table of Contents
 
@@ -130,7 +141,7 @@ const generateMarkdown = (read) =>
 
 ## About The Project
 
-![Product Name Screen Shot](${read.screenshot1}?raw=true "screenshot")
+![Product Name Screen Shot](${read.screenshot}?raw=true "screenshot")
 
 ### Description
 
@@ -145,26 +156,23 @@ ${read.description}
 
 ## Getting Started
 
+### Prerequisites
 
+Install Node.js on your Computer
 
-<!-- ### Prerequisites -->
+    - Go to Node.js Website and download Node.
+        [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
         
-
-### Installation
+### Installation & Usage
 <!-- Get a free API Key at [https://example.com](https://example.com) -->
 
-git clone https://github.com/read.userName/read.repoName.git -->
+1. Clone the Repo to your Local machine using 
+    - git clone https://github.com/${read.github}/${read.repo}.git 
 
-
-1. ${read.install1}
-2. ${read.install2}
-3. ${read.install3}
-4. ${read.install4}
-5. ${read.install5}
-
-
-
-
+2. Open the Repo folder in your VSCODE Integrated Terminal.
+3. run command...
+    - node index.js
+4. And the Prompt questions in the Command Line and You'll have a Good README.
 
 <!-- USAGE EXAMPLES 
 ## Usage
@@ -174,41 +182,36 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
 
-
 <!-- ROADMAP 
 ## Roadmap
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues). -->
 
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. 
+Any contributions you make are **greatly appreciated**.
 
-1. Fork the Project
+1. Fork the Repo on GitHub @ [https://github.com/${read.github}/${read.repo}](https://github.com/${read.github}/${read.repo}) 
 2. Create your Feature Branch ('git checkout -b feature/AmazingFeature')
 3. Commit your Changes ('git commit -m "Add some AmazingFeature"')
 4. Push to the Branch ('git push origin feature/AmazingFeature")
 5. Open a Pull Request
-
-
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the ${read.license}. See LICENSE for more information.
 
-
 <!-- CONTACT -->
 ## Contact
 
-<!--  Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com -->
-${read.name} - [@${read.twitter}](https://twitter.com/${read.twitter}) - ${read.email}
+<!--  Your Name - [@your_twitter](https://twitter.com/userName) - email@example.com -->
+${read.name} - ${read.email}
 
-<!-- [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name) -->
-Project Link: [https://github.com/${read.userName}/${read.repoName}](https://github.com/${read.userName}/${read.repoName})
+<!-- [https://github.com/your_github/repo_name](https://github.com/userName/repo_name) -->
+Project Link: [https://github.com/${read.github}/${read.repo}](https://github.com/${read.github}/${read.repo})
 `;
 
 // Bonus using async/await and try/catch
