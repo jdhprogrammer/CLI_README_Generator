@@ -88,6 +88,11 @@ const promptUser = () => {
         },
         {
             type: 'input',
+            name: 'prereqs',
+            message: 'What prerequisites will someone need on computer before install?',
+        },
+        {
+            type: 'input',
             name: 'install',
             message: 'What are the steps required to Install your Project/Application?',
         },
@@ -103,7 +108,7 @@ const promptUser = () => {
         },
         {
             type: 'list',
-            name: 'size',
+            name: 'license',
             message: 'Please select a license for your Project:',
             choices: ['APACHE 2.0', 'Mozilla Public 2.0', 'GNU GPLv3', 'GNU AGPLv3', 'MIT', 'Boost Software 1.0', 'The Unlicense'],
         },
@@ -115,16 +120,59 @@ const promptUser = () => {
     ]);
 };
 
-const generateMarkdown = (read) =>
-    `# ${read.title}
-    #### Developer: ${read.name}
+const generateMarkdown = (answers) => {
 
-    Email: ${read.email}
-    GitHub: https://github.com/${read.github}
-    LinkedIn: ${read.linkedin}
+    let moreProjectLinks = '';
 
-    Project Repository: [https://github.com/${read.github}/${read.repo}](https://github.com/${read.github}/${read.repo})
-    Video Walk-thru: [${read.askMoreLinks}](${read.askMoreLinks})
+    if (answers.moreLinks) {
+        moreProjectLinks = answers.moreLinks.split(',').join('<br>');
+    }
+
+    let techLanguages = '';
+
+    if (answers.tools) {
+        for (let i = 0; i < answers.tools.split(',').length; i++) {
+            screenshots += `<kbd>* ${answers.tools.split(',')[i].trim()}.</kbd>`;
+        }
+    }
+
+    //Set Screenshots template according to the user iniput
+    let screenshots = '';
+
+    if (answers.screenshot) {
+        for (let i = 0; i < answers.screenshot.split(',').length; i++) {
+            screenshots += `<kbd>![screenshot-demo${i + 1}](${answers.screenshot.split(',')[i].trim()})</kbd>`;
+        }
+    }
+
+    return `# ${answers.title}
+
+    [![github-follow](https://img.shields.io/github/followers/${answers.username
+    .trim()
+    .toLowerCase()}?label=Follow&logoColor=purple&style=social)](https://github.com/${answers.username.trim().toLowerCase()})
+    [![project-languages-used](https://img.shields.io/github/languages/count/${answers.username
+    .trim()
+    .toLowerCase()}/${answers.repoName.trim()}?color=important)](https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()})
+    [![project-top-language](https://img.shields.io/github/languages/top/${answers.username
+    .trim()
+    .toLowerCase()}/${answers.repoName.trim()}?color=blueviolet)](https://github.com/${answers.username.trim().toLowerCase()}/${answers.repoName.trim()})
+    [![license](https://img.shields.io/badge/License-${answers.license
+    .toUpperCase()
+    .split('-')
+    .join('v')}-brightgreen.svg)](https://choosealicense.com/licenses/${answers.license}/)
+
+#### Developer: ${answers.name}
+
+Email: ${answers.email}  
+  GitHub: https://github.com/${answers.github}  
+LinkedIn: ${answers.linkedin}  
+
+Project Repository: [https://github.com/${answers.github}/${answers.repo}](https://github.com/${answers.github}/${answers.repo})  
+${moreProjectLinks}
+
+### Screenshots
+
+${screenshots}
     
 ## Table of Contents
 
@@ -136,7 +184,6 @@ const generateMarkdown = (read) =>
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
   * [Usage](#usage)
-<-- * [Roadmap](#roadmap) -->
 * [Contributing](#contributing)
     * [Credits & References](#credits-&-references)
 * [License](#license)
@@ -145,92 +192,77 @@ const generateMarkdown = (read) =>
 
 ## About The Project
 
-![Product Name Screen Shot](${read.screenshot}?raw=true "screenshot")
+<-- ![Product Name Screen Shot](${answers.screenshot}?raw=true "screenshot") -->
 
 ### Description
 
-${read.description}
+${answers.description}
 
 #### User Story
 
-${read.userStory}
+${answers.userStory}
 
 
-### Built With
+### Technologies Used
 
-* [${read.tool0}](https://${read.tool0}.com)
-* [${read.tool1}](https://${read.tool1}.com)
-* [${read.tool3}](https://${read.tool3}.com)
+\`\`\`
+${techLanguages}
+\`\`\`
 
 
 ## Getting Started
 
 ### Prerequisites
 
-Install Node.js on your Computer
+$
 
-    - Go to Node.js Website and download Node.
-        [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
         
 ### Installation & Usage
-<!-- Get a free API Key at [https://example.com](https://example.com) -->
 
-1. Clone the Repo to your Local machine using 
-    - git clone https://github.com/${read.github}/${read.repo}.git 
+${answer.install}
+  
+  
+${answers.usage}
+  
+  
 
-2. Open the Repo folder in your VSCODE Integrated Terminal.
-3. run command...
-    - node index.js
-4. And the Prompt questions in the Command Line and You'll have a Good README.
-
- 
-## Usage
-
-${read.usage}
-
-<!-- ROADMAP 
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues). -->
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. 
 Any contributions you make are **greatly appreciated**.
 
-1. Fork the Repo on GitHub @ [https://github.com/${read.github}/${read.repo}](https://github.com/${read.github}/${read.repo}) 
+1. Fork the Repo on GitHub @ [https://github.com/${answers.github}/${answers.repo}](https://github.com/${answers.github}/${answers.repo}) 
 2. Create your Feature Branch ('git checkout -b feature/AmazingFeature')
 3. Commit your Changes ('git commit -m "Add some AmazingFeature"')
 4. Push to the Branch ('git push origin feature/AmazingFeature")
 5. Open a Pull Request
-
+  
+  
 ### Credits & References
 
-${read.credit}
+${answers.credit}
+  
 
-<!-- LICENSE -->
 ## License
 
-Distributed under the ${read.license}. See LICENSE for more information.
+Distributed under the ${answers.license}. See LICENSE for more information.
+  
 
-<!-- CONTACT -->
 ## Contact
 
-<!--  Your Name - [@your_twitter](https://twitter.com/userName) - email@example.com -->
-${read.name} - ${read.email}
+${answers.name} - ${answers.email}
 
-<!-- [https://github.com/your_github/repo_name](https://github.com/userName/repo_name) -->
-Project Link: [https://github.com/${read.github}/${read.repo}](https://github.com/${read.github}/${read.repo})
-`;
+Project Link: [https://github.com/${answers.github}/${answers.repo}](https://github.com/${answers.github}/${answers.repo})
+`
+};
 
 // Bonus using async/await and try/catch
 const init = async() => {
     console.log('Howdy!');
     try {
-        const read = await promptUser();
+        const answers = await promptUser();
 
-        const readme = generateMarkdown(read);
+        const readme = generateMarkdown(answers);
 
         await writeFileAsync('newREADME.md', readme);
 
