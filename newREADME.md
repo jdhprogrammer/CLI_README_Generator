@@ -1,12 +1,21 @@
 # CLI README Generator
+
+[![github-follow](https://img.shields.io/github/followers/jdhprogrammer?color=purple&style=social)](https://github.com/jdhprogrammer) [![project-languages-used](https://img.shields.io/github/languages/count/jdhprogrammer/CLI_README_Generator?color=important)](https://github.com/jdhprogrammer/CLI_README_Generator)
+[![project-top-language](https://img.shields.io/github/languages/top/jdhprogrammer/CLI_README_Generator?color=blueviolet)](https://github.com/jdhprogrammer/CLI_README_Generator)
+[![license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://choosealicense.com/licenses/MIT/)
+
 #### Developer: David Harris
 
-Email: jdh.programmer@gmail.com
-GitHub: https://github.com/jdhprogrammer
-LinkedIn: https://linkedin.com/in/david-harris-75080/
+Email: jdh.programmer@gmail.com  
+  GitHub: https://github.com/jdhprogrammer  
+LinkedIn: https://linkedin.com/in/david-harris-75080/  
 
-Project Repository: [https://github.com/jdhprogrammer/CLI_README_Generator](https://github.com/jdhprogrammer/CLI_README_Generator)
-Video Walk-thru: [undefined](undefined)
+Project Repository: [https://github.com/jdhprogrammer/CLI_README_Generator](https://github.com/jdhprogrammer/CLI_README_Generator)  
+https://www.youtube.com/watch?v=6avJHaC3C2U<br> https://www.youtube.com/watch?v=7EmboKQH8lM<br> https://www.youtube.com/watch?v=EZ05e7EMOLM
+
+### Screenshots
+
+<kbd>![screenshot-demo1](./Assets/Screenshots/CLI_README_Prompts.jpeg)</kbd><kbd>![screenshot-demo2](./Assets/Screenshots/Inquirer_PromtUser.jpeg)</kbd><kbd>![screenshot-demo3](./Assets/Screenshots/Markdown_string_interpolation.jpeg)</kbd><kbd>![screenshot-demo4](./Assets/Screenshots/Write_Template_toFile.jpeg)</kbd>
     
 ## Table of Contents
 
@@ -26,7 +35,7 @@ Video Walk-thru: [undefined](undefined)
 
 ## About The Project
 
-![Product Name Screen Shot](./Assets/Screenshots/CLI_README_Prompts.jpeg?raw=true "screenshot")
+<!-- [Product Name Screen Shot](./Assets/Screenshots/CLI_README_Prompts.jpeg, ./Assets/Screenshots Inquirer_PromtUser.jpeg, ./Assets/Screenshots/Markdown_string_interpolation.jpeg, ./Assets Screenshots/Write_Template_toFile.jpeg?raw=true "screenshot") -->
 
 ### Description
 
@@ -37,32 +46,26 @@ When creating an open source project on GitHub, it’s important to have a high-
 AS A developer, I WANT a README generator, SO THAT I can quickly create a professional README for a new Project.
 
 
-### Built With
+### Technologies Used
 
-* [undefined](https://undefined.com)
-* [undefined](https://undefined.com)
-* [undefined](https://undefined.com)
+```
+<kbd>* Javascript.</kbd><kbd>* Markdown.</kbd><kbd>* Node.js.</kbd><kbd>* NPM Inquirer.</kbd>
+```
 
 
 ## Getting Started
 
 ### Prerequisites
 
-Install Node.js on your Computer
+$
 
-- Go to Node.js Website and download Node.
-        [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
         
 ### Installation & Usage
-<!-- Get a free API Key at [https://example.com](https://example.com) -->
 
-1. Clone the Repo to your Local machine using 
-    - git clone https://github.com/jdhprogrammer/CLI_README_Generator.git 
-2. In the Local Repo folder, run commaned: npm init -y
- 
-## Usage
-
-Open Repo folder in VSCODE Integrated Terminal. Then Run command - node index.js. Last, simply answer the prompt questions with your information, links, etc. At the end it will create a README file for you in the folder, with all of your Answers populated throughout.
+1. Clone the Repo to your Local machine using - git clone https://github.com/jdhprogrammer/CLI_README_Generator.git  2. In the Local Repo folder, run command: npm init -y  3. Check package.json for Inquirer Dependency.
+  
+  
+Open Repo folder in VSCODE Integrated Terminal. Then Run command - node index.js. Last simply answer the prompt questions with your information, links, etc. At the end it will create a README file for you in the folder, with all of your Answers populated throughout.
   
   
 
@@ -81,17 +84,15 @@ Any contributions you make are **greatly appreciated**.
 ### Credits & References
 
 Dane Edwards, Andrew Layendecker.
+  
 
-<!-- LICENSE -->
 ## License
 
-Distributed under the undefined. See LICENSE for more information.
+Distributed under the MIT. See LICENSE for more information.
+  
 
-<!-- CONTACT -->
 ## Contact
 
-<!--  Your Name - [@your_twitter](https://twitter.com/userName) - email@example.com -->
 David Harris - jdh.programmer@gmail.com
 
-<!-- [https://github.com/your_github/repo_name](https://github.com/userName/repo_name) -->
 Project Link: [https://github.com/jdhprogrammer/CLI_README_Generator](https://github.com/jdhprogrammer/CLI_README_Generator)
