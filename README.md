@@ -83,7 +83,7 @@ Any contributions you make are **greatly appreciated**.
   
 ### Screenshots
 
-<kbd>![screenshot-demo1](./Assets/Screenshots/CLI_README_GEN.jpeg)</kbd><kbd>![screenshot-demo2](./Assets/Screenshots/CLI_README_Prompts.jpeg)</kbd><kbd>![screenshot-demo3](./Assets/Screenshots/Inquirer_PromtUser.jpeg)</kbd><kbd>![screenshot-demo4](./Assets/Screenshots/Markdown_string_interpolation.jpeg)</kbd><kbd>![screenshot-demo5](./Assets/Screenshots/Write_Template_toFile.jpeg) </kbd>
+<kbd>![screenshot-demo2](./Assets/Screenshots/CLI_README_Prompts.jpeg)</kbd><kbd>![screenshot-demo3](./Assets/Screenshots/Inquirer_PromtUser.jpeg)</kbd><kbd>![screenshot-demo4](./Assets/Screenshots/Markdown_string_interpolation.jpeg)</kbd><kbd>![screenshot-demo5](./Assets/Screenshots/Write_Template_toFile.jpeg) </kbd>
 <br>
 <br>
   
