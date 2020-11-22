@@ -35,7 +35,7 @@ https://youtu.be/l-H0cVBeSls
 
 ## About The Project
   
-![screenshot-demo1](./Assets/Screenshots/CLI_README_GEN.jpeg)
+<kbd>![screenshot-demo1](./Assets/Screenshots/CLI_README_GEN.jpeg)</kbd>
 
 ### Description
 
