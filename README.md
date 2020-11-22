@@ -2,9 +2,8 @@
 
 [![github-follow](https://img.shields.io/github/followers/jdhprogrammer?label=Follow&logoColor=purple&style=social)](https://github.com/jdhprogrammer) [![project-languages-used](https://img.shields.io/github/languages/count/jdhprogrammer/CLI_README_Generator?color=important)](https://github.com/jdhprogrammer/CLI_README_Generator) [![project-top-language](https://img.shields.io/github/languages/top/jdhprogrammer/CLI_README_Generator?color=blueviolet)](https://github.com/jdhprogrammer/CLI_README_Generator) [![license](https://img.shields.io/badge/License-mit-brightgreen.svg)](https://choosealicense.com/licenses/mit/)
 
-#### Developer
-
-David Harris
+## Developer
+### David Harris
 
 Email: jdh.programmer@gmail.com  
 GitHub: https://github.com/jdhprogrammer  
@@ -13,7 +12,7 @@ LinkedIn: https://linkedin.com/in/david-harris-75080/
 Project Repository: [https://github.com/jdhprogrammer/CLI_README_Generator](https://github.com/jdhprogrammer/CLI_README_Generator)  
 
 ### Walk-through Video
- 
+
 https://youtu.be/l-H0cVBeSls
 
 ## Table of Contents
