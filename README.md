@@ -27,6 +27,7 @@ https://youtu.be/l-H0cVBeSls
   * [Installation](#installation)
   * [Usage](#usage)
 
+* [Sceenshots](#screenshots)
 * [Contributing](#contributing)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
@@ -82,7 +83,10 @@ Any contributions you make are **greatly appreciated**.
   
 ### Screenshots
 
-![screenshot-demo1](./Assets/Screenshots/CLI_README_GEN.jpeg)![screenshot-demo2](./Assets/Screenshots/CLI_README_Prompts.jpeg)![screenshot-demo3](./Assets/Screenshots/Inquirer_PromtUser.jpeg)![screenshot-demo4](./Assets/Screenshots/Markdown_string_interpolation.jpeg)![screenshot-demo5](./Assets/Screenshots/Write_Template_toFile.jpeg) 
+<kbd>![screenshot-demo1](./Assets/Screenshots/CLI_README_GEN.jpeg)</kbd><kbd>![screenshot-demo2](./Assets/Screenshots/CLI_README_Prompts.jpeg)</kbd><kbd>![screenshot-demo3](./Assets/Screenshots/Inquirer_PromtUser.jpeg)</kbd><kbd>![screenshot-demo4](./Assets/Screenshots/Markdown_string_interpolation.jpeg)</kbd><kbd>![screenshot-demo5](./Assets/Screenshots/Write_Template_toFile.jpeg) </kbd>
+<br>
+<br>
+  
   
 ### Acknowledgements
 
