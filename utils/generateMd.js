@@ -24,11 +24,11 @@ const generateMarkdown = function(answers) {
 
     if (answers.screenshot) {
         for (let i = 0; i < answers.screenshot.split(',').length; i++) {
-            screenshots += `![screenshot-demo${i + 1}](${answers.screenshot.split(',')[i].trim()})`;
+            screenshots += `<kbd>![screenshot-demo${i + 1}](${answers.screenshot.split(',')[i].trim()})</kbd>`;
 
         }
         for (let i = 0; i < 1; i++) {
-            screenshotMain += `![screenshot-demo${i + 1}](${answers.screenshot.split(',')[0].trim()})`;
+            screenshotMain += `<kbd>![screenshot-demo${i + 1}](${answers.screenshot.split(',')[0].trim()})</kbd>`;
         }
     }
 
@@ -36,9 +36,9 @@ const generateMarkdown = function(answers) {
 
 [![github-follow](https://img.shields.io/github/followers/${answers.github.trim().toLowerCase()}?label=Follow&logoColor=purple&style=social)](https://github.com/${answers.github.trim().toLowerCase()}) [![project-languages-used](https://img.shields.io/github/languages/count/${answers.github.trim().toLowerCase()}/${answers.repo.trim()}?color=important)](https://github.com/${answers.github.trim().toLowerCase()}/${answers.repo.trim()}) [![project-top-language](https://img.shields.io/github/languages/top/${answers.github.trim().toLowerCase()}/${answers.repo.trim()}?color=blueviolet)](https://github.com/${answers.github.trim().toLowerCase()}/${answers.repo.trim()}) [![license](https://img.shields.io/badge/License-${answers.license.toLowerCase().split('-').join('v')}-brightgreen.svg)](https://choosealicense.com/licenses/${answers.license}/)
 
-#### Developer
+## Developer
 
-${answers.name}
+### ${answers.name}
 
 Email: ${answers.email}  
 GitHub: https://github.com/${answers.github}  
