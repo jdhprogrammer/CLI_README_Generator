@@ -24,11 +24,11 @@ const generateMarkdown = function(answers) {
 
     if (answers.screenshot) {
         for (let i = 0; i < answers.screenshot.split(',').length; i++) {
-            screenshots += `<kbd>![screenshot-demo${i + 1}](${answers.screenshot.split(',')[i].trim()})</kbd>`;
+            screenshots += `[<img src="./public/assets/images/screenshots/${answers.screenshot.split(',')[i].trim()}?raw=true" height="300"/>](./public/assets/images/screenshots/${answers.screenshot.split(',')[i].trim()}?raw=true)`;
 
         }
         for (let i = 0; i < 1; i++) {
-            screenshotMain += `<kbd>![screenshot-demo${i + 1}](${answers.screenshot.split(',')[0].trim()})</kbd>`;
+            screenshotMain += `[<img src="./public/assets/images/screenshots/${answers.screenshot.split(',')[0].trim()}?raw=true" height="300"/>](./public/assets/images/screenshots/${answers.screenshot.split(',')[0].trim()}?raw=true)`;
         }
     }
 
@@ -45,7 +45,9 @@ GitHub: https://github.com/${answers.github}
 LinkedIn: ${answers.linkedin}  
 
 Project Repository: [https://github.com/${answers.github}/${answers.repo}](https://github.com/${answers.github}/${answers.repo})  
-  
+<br>
+Project Deployment: [${answers.deployment}](${answers.deployment})<br>
+
 ${moreProjectLinks}
 
 ## Table of Contents
@@ -53,6 +55,7 @@ ${moreProjectLinks}
 * [About the Project](#about-the-project)
   * [Description](#description)
   * [User Story](#user-story)
+  * [More Details](#more-details)
   * [Technologies](#technologies)
 
 * [Getting Started](#getting-started)
@@ -71,12 +74,21 @@ ${screenshotMain}
 
 ### Description
 
+\`\`\`
 ${answers.description}
+\`\`\`
 
 #### User Story
 
+\`\`\`
 ${answers.userStory}
+\`\`\`
 
+#### More Details
+
+\`\`\`
+${answers.moreDetails}
+\`\`\`
 
 ### Technologies Used
 
@@ -134,6 +146,8 @@ ${answers.name} - ${answers.email}
 Project Link: [https://github.com/${answers.github}/${answers.repo}](https://github.com/${answers.github}/${answers.repo})
 
 <br>
+
+Project Deployment: [${answers.deployment}](${answers.deployment})<br>
 
 Copyright © ${year} [${answers.name.trim().toUpperCase()}](https://github.com/${answers.github.trim().toLowerCase()})
   

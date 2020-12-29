@@ -35,6 +35,17 @@ const questions = [{
     },
     {
         type: 'input',
+        name: 'deployment',
+        message: 'Enter your Project Deployment URL:',
+        validate: function(deployment) {
+            if (deployment) {
+                return true;
+            }
+            return 'It is required to enter your Project Deployment URL:';
+        },
+    },
+    {
+        type: 'input',
         name: 'linkedin',
         message: 'Enter you Linkedin profile link:',
         validate: function(linkedin) {
@@ -133,6 +144,11 @@ const questions = [{
             }
             return 'A professional README provides the User Story for the propject.';
         },
+    },
+    {
+        type: 'input',
+        name: 'moreDetails',
+        message: 'Add any more details concerning your project requirements or explanation:',
     },
     {
         type: 'input',

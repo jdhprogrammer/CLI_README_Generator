@@ -1,6 +1,12 @@
-const { prompt } = require('inquirer');
-const { writeFile } = require('fs');
-const { promisify } = require('util');
+const {
+    prompt
+} = require('inquirer');
+const {
+    writeFile
+} = require('fs');
+const {
+    promisify
+} = require('util');
 
 const questions = require('./utils/Questions.js')
 const generateMarkdown = require('./utils/generateMd')
@@ -23,7 +29,7 @@ const init = async() => {
 
         const readme = generateMarkdown(answers);
 
-        await writeFileAsync('README.md', readme);
+        await writeFileAsync('README1.md', readme);
 
         console.log('Successfully wrote to newREADME.md');
     } catch (err) {
